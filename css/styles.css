@@ -1,9 +1,10 @@
 /* ============================================
    MODULE 3 — CSS3 Layouts & Box Model
+   MODULE 4 — Mobile-First Responsive Design
    /css/styles.css
    ============================================ */
 
-/* ---- Exercise 1: Design tokens ---- */
+/* ---- Exercise 1 (Module 3): Design tokens ---- */
 :root {
   --clr-navy: #0F2A4A;
   --clr-accent: #E85D04;
@@ -33,16 +34,27 @@ body {
 }
 
 h1, h2, h3 { font-family: var(--font-heading); color: var(--clr-navy); }
-h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: var(--space-md); }
-h2 { font-size: 1.75rem; margin: var(--space-lg) 0 var(--space-sm); }
+
+/* ---- Exercise 3 (Module 4): clamp() fluid typography ----
+   Replaces the old fixed/step-wise heading sizes. Font sizes now
+   scale SMOOTHLY with the viewport instead of jumping at breakpoints.
+   clamp(MIN, IDEAL, MAX) — IDEAL uses vw so it grows with the
+   viewport, but is capped at MIN on tiny screens and MAX on huge ones. */
+h1 { font-size: clamp(2rem, 4vw + 1rem, 4rem); line-height: 1.1; margin-bottom: var(--space-md); }
+h2 { font-size: clamp(1.5rem, 2.5vw + 0.75rem, 2.5rem); margin: var(--space-lg) 0 var(--space-sm); }
+p  { font-size: clamp(1rem, 0.5vw + 0.85rem, 1.15rem); }
+
 a  { color: var(--clr-accent); }
 
-/* ---- Exercise 3: Flexbox nav bar ---- */
+/* ---- Exercise 2 (Module 4): Mobile-first responsive header ----
+   Default (mobile) styles come first: stacked, centered.
+   Enhanced for tablet/desktop inside the @media query below. */
 .site-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--space-sm) var(--space-md);
+  gap: var(--space-sm);
+  padding: var(--space-sm);
   background: var(--clr-navy);
   color: white;
   max-width: none;
@@ -52,13 +64,28 @@ a  { color: var(--clr-accent); }
 .nav-links {
   list-style: none;
   display: flex;
-  gap: var(--space-md);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
 }
 .nav-links a { color: white; text-decoration: none; }
 .nav-links a:hover { color: var(--clr-accent); }
 .nav-links a.current { text-decoration: underline; text-decoration-color: var(--clr-accent); }
 
-/* ---- Exercise 4: CSS Grid project cards ---- */
+/* Enhance for tablet and up — becomes the old horizontal nav bar */
+@media (min-width: 768px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-md);
+  }
+  .nav-links {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+}
+
+/* ---- Exercise 4 (Module 3): CSS Grid project cards ---- */
 /* body has max-width: 65ch for readable paragraph text. A plain
    negative margin can't escape that (it only cancels padding, not
    a parent's max-width). This "full-bleed" trick uses 100vw sized
@@ -84,7 +111,7 @@ a  { color: var(--clr-accent); }
 }
 .card-project h3 { color: var(--clr-navy); margin-bottom: var(--space-xs); }
 
-/* ---- Exercise 2: box model test (screenshot #1 — border-box) ---- */
+/* ---- Exercise 2 (Module 3): box model test (screenshot #1 — border-box) ---- */
 /* box-sizing: border-box already comes from the * selector at the
    top of this file, so this card should measure exactly 200px total. */
 .card {
