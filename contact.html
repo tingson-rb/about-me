@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Renz Bryan Tingson</title>
+
+  <meta name="description" content="Get in touch with Renz Bryan Tingson via the contact form or email below.">
+  <link rel="canonical" href="https://YOUR-DOMAIN.com/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact | Renz Bryan Tingson">
+  <meta property="og:description" content="Reach out to Renz Bryan Tingson through this contact page.">
+  <meta property="og:image" content="https://YOUR-DOMAIN.com/assets/hero-md.jpg">
+  <meta property="og:url" content="https://YOUR-DOMAIN.com/contact.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <header>
+    <h1>Renz Bryan Tingson</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <address>
+      Email: <a href="mailto:tingson.rb@gmail.com">tingson.rb@gmail.com</a>
+    </address>
+
+    <section>
+      <form action="#" method="POST">
+        <fieldset>
+          <legend>Contact me</legend>
+          <p>
+            <label for="name">Full name</label><br>
+            <input type="text" id="name" name="name" required minlength="2">
+          </p>
+          <p>
+            <label for="email">Email address</label><br>
+            <input type="email" id="email" name="email" required>
+          </p>
+          <p>
+            <label for="phone">Phone (optional)</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9\-\s]{7,}">
+          </p>
+          <p>
+            <label for="heard">How did you hear about me?</label><br>
+            <select id="heard" name="heard">
+              <option value="">-- Select one --</option>
+              <option value="school">School / Classmate</option>
+              <option value="social">Social Media</option>
+              <option value="search">Search Engine</option>
+              <option value="other">Other</option>
+            </select>
+          </p>
+          <p>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </p>
+          <p>
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree to be contacted</label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Renz Bryan Tingson</p>
+  </footer>
+</body>
+</html>
