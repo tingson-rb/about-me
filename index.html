@@ -6,24 +6,28 @@
   <title>Home | Renz Bryan Tingson</title>
 
   <meta name="description" content="Home page of Renz Bryan Tingson — BS Information Systems student sharing projects and contact info.">
-  <link rel="canonical" href="https://tingson-rb.github.io/about-me/index.html">
+  <link rel="canonical" href="https://YOUR-DOMAIN.com/index.html">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Home | Renz Bryan Tingson">
   <meta property="og:description" content="Home page of Renz Bryan Tingson — IS student portfolio and contact info.">
-  <meta property="og:image" content="https://tingson-rb.github.io/about-me/assets/hero-md.jpg">
-  <meta property="og:url" content="https://tingson-rb.github.io/about-me/index.html">
+  <meta property="og:image" content="https://YOUR-DOMAIN.com/assets/hero-md.jpg">
+  <meta property="og:url" content="https://YOUR-DOMAIN.com/index.html">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Renz Bryan Tingson</h1>
+  <header class="site-header">
+    <a href="index.html" class="logo">Renz Bryan Tingson</a>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
+      <ul class="nav-links">
+        <li><a href="index.html" class="current">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -33,7 +37,9 @@
   <main>
     <article>
       <h2>Welcome</h2>
-      <p>Hi, I'm Renz Bryan Tingson, a BS Information Systems student. This is my "About Me" site built for Module 2 — a semantic, SEO-ready, three-page HTML5 site.</p>
+      <div class="card">
+        <p>Hi, I'm Renz Bryan Tingson, a BS Information Systems student. This is my "About Me" site built for Module 2 — a semantic, SEO-ready, three-page HTML5 site.</p>
+      </div>
     </article>
 
     <picture>
@@ -52,6 +58,18 @@
       <img src="assets/avatar.jpg" alt="Illustrated avatar of Renz Bryan Tingson, a student wearing a hoodie and backpack" width="200" height="200" loading="lazy">
       <figcaption>Renz Bryan Tingson — BS Information Systems</figcaption>
     </figure>
+
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card-project"><h3>Project 1</h3><p>Short description.</p></article>
+        <article class="card-project"><h3>Project 2</h3><p>Short description.</p></article>
+        <article class="card-project"><h3>Project 3</h3><p>Short description.</p></article>
+        <article class="card-project"><h3>Project 4</h3><p>Short description.</p></article>
+        <article class="card-project"><h3>Project 5</h3><p>Short description.</p></article>
+        <article class="card-project"><h3>Project 6</h3><p>Short description.</p></article>
+      </div>
+    </section>
   </main>
 
   <footer>
